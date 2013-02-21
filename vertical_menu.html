@@ -1,0 +1,203 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+	<head>
+
+		<title>Demo -  Create Simple Jquery Right Click Cross browser Vertical Menu - Web developer juice</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta name="title" content="" />
+		<meta name="author" content="" />
+		<meta name="subject" content="" />
+		<meta name="language" content="en" />
+		<meta name="keywords" content="" />
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			
+			$('#rightclickarea').bind('contextmenu',function(e){
+			var $cmenu = $(this).next();
+			$('<div class="overlay"></div>').css({left : '0px', top : '0px',position: 'absolute', width: '100%', height: '100%', zIndex: '100' }).click(function() {
+				$(this).remove();
+				$cmenu.hide();
+			}).bind('contextmenu' , function(){return false;}).appendTo(document.body);
+			$(this).next().css({ left: e.pageX, top: e.pageY, zIndex: '101' }).show();
+
+			return false;
+			 });
+
+			 $('.vmenu .first_li').live('click',function() {
+				if( $(this).children().size() == 1 ) {
+					alert($(this).children().text());
+					$('.vmenu').hide();
+					$('.overlay').hide();
+				}
+			 });
+
+			 $('.vmenu .inner_li span').live('click',function() {
+					alert($(this).text());
+					$('.vmenu').hide();
+					$('.overlay').hide();
+			 });
+
+	
+			$(".first_li , .sec_li, .inner_li span").hover(function () {
+				$(this).css({backgroundColor : '#E0EDFE' , cursor : 'pointer'});
+			if ( $(this).children().size() >0 )
+					$(this).find('.inner_li').show();	
+					$(this).css({cursor : 'default'});
+			}, 
+			function () {
+				$(this).css('background-color' , '#fff' );
+				$(this).find('.inner_li').hide();
+			});
+	
+
+		});
+		</script>
+
+	<style>
+		*{padding:0;margin:0}
+		html{text-align:center;}
+		body{width:950px;margin:0 auto;font-family:trebuchet ms;text-align:left;margin-top:10px;}
+		#rightclickarea{padding:50px 0;width:620px;text-align:center;border:1px solid #ccc;margin-top:10px;}
+		.vmenu{
+		border:1px solid #aaa;
+		position:absolute;
+		background:#fff;
+		display:none;font-size:0.75em;}
+		.first_li{}
+		.first_li span{width:100px;display:block;padding:5px 10px;cursor:pointer}
+		.inner_li{display:none;margin-left:120px;position:absolute;border:1px solid #aaa;border-left:1px solid #ccc;margin-top:-28px;background:#fff;}
+		.sep_li{border-top: 1px ridge #aaa;margin:5px 0}
+		.fill_title{font-size:11px;font-weight:bold;/height:15px;/overflow:hidden;word-wrap:break-word;}
+
+	</style>
+
+	</head>
+	
+		<body>
+
+		<h1>Demo -  Create Simple Jquery Right Click Cross browser Vertical Menu </h1>
+
+		<div style="padding:10px 0;margin:0 auto;width:728px;text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7543689215337279";
+/* 728x90, wdj */
+google_ad_slot = "1724107062";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</div>
+
+					
+					<div id="rightclickarea">Right click inside bordered container</div>
+
+					<div class="vmenu">
+
+						<div class="first_li"><span>Open</span></div>
+						<div class="first_li"><span>Open in new tab</span></div>
+
+						<div class="sep_li"></div>
+
+						<div class="first_li"><span>Quick Preview</span>
+							<div class="inner_li">
+								<span>Dossier</span> 
+								<span>Channel 1</span>
+								<span>Channel 2</span>
+							</div>
+						</div>
+
+						<div class="first_li"><span>Preview</span>
+							<div class="inner_li">
+								<span>Channel 1</span>
+								<span>Channel 2 </span>
+							</div>
+						</div>
+
+						<div class="first_li"><span>Edit</span></div>
+
+						<div class="first_li"><span>Event Log</span></div>
+
+						<div class="sep_li"></div>
+
+						<div class="first_li"><span>New</span></div>
+
+						<div class="first_li"><span>Assignments</span>
+							<div class="inner_li">
+								<span>Assignement 1</span>
+								<span>Assignement 2</span>
+							</div>
+						</div>
+
+						<div class="first_li"><span>Assets</span>
+							<div class="inner_li">
+								<span>Asset 1</span>
+								<span>Asset 2</span>
+								<span>All Assets</span>
+							</div>
+						</div>
+
+						<div class="first_li"><span>Preview</span></div>
+
+						<div class="sep_li"></div>
+
+						<div class="first_li"><span>Move to</span>
+						<div class="inner_li">
+							<span>Folder name</span>
+						</div>
+						</div>
+
+						<div class="first_li"><span>Others</span>
+							<div class="inner_li">
+								<span>Mark as Read</span>
+								<span>Mark as Unread</span>
+								<span>Trash</span>
+								<span>Archieve</span>
+								<span>Commite</span>
+								<span>Release</span>
+							</div>
+						</div>
+
+					</div>
+
+			<div style="padding:10px 0;margin:0 auto;width:728px;text-align:center">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7543689215337279";
+/* 728x90, wdj */
+google_ad_slot = "1724107062";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</div>
+
+			<strong><a href="http://www.webdeveloperjuice.com/2010/02/22/create-simple-jquery-right-click-cross-browser-vertical-menu/">View original post</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://twitter.com/wdjuice">Follow us on twitter</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://feeds.feedburner.com/WebDeveloperJuice">Subscribe to RSS</a></strong> 
+
+			<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-24180244-1']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+
+			</script>
+
+		</body>
+	
+	</html>
